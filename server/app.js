@@ -18,7 +18,7 @@ app.use(require('./middleware/headers'));
 // ROUTES
 app.use('/user', user);
 app.use(require('./middleware/validate-session'));
-app.use('/log', log); // THIS WAS GIVING AN ERROR WHEN LOGCONTROLLER VARIABLES/IMPORTS & module.exports = router; WASN'T IN THERE
+app.use('/log', log); 
 
 
 // CONSOLE LOG TEST

@@ -1,8 +1,7 @@
 const router = require('express').Router()
-
 const Log = require('../db').import('../models/log');
 
-//GET REQUEST
+//GET REQUEST -- /LOG
 router.get('/', (req, res) => {
     Log.findAll()
     .then(logs => res.status(200).json({
@@ -13,7 +12,7 @@ router.get('/', (req, res) => {
     }))
 })
 
-//POST REQUEST
+//POST REQUEST -- /LOG
 router.post('/', (req, res) => {
 
     const logFromRequest = {
@@ -32,7 +31,7 @@ router.post('/', (req, res) => {
         }))
 })
 
-//GET ID
+//GET ID -- /LOG/:ID
 router.get('/:id', (req, res) => {
     Log.findOne({
         where: {
@@ -47,7 +46,7 @@ router.get('/:id', (req, res) => {
     }))
 })
 
-//UPDATE
+//UPDATE -- PUT -- /LOG/:ID
 router.put('/:id', (req, res) => {
     Log.update(req.body, {
         where: {
@@ -62,7 +61,7 @@ router.put('/:id', (req, res) => {
     }))
 })
 
-//DELETE METHOD
+//DELETE -- -- /LOG/:ID
 router.delete('/:id', (req, res) => {
     Log.destroy({
         where: {
