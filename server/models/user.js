@@ -1,4 +1,3 @@
-// PIE SERVER EXAMPLE
 module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define('user', {
         username: {
@@ -13,11 +12,3 @@ module.exports = (sequelize, DataTypes) => {
     return User;
 }
 
-// MODULES EXAMPLE
-
-// module.exports = function (sequelize, DataTypes) {
-//     return sequelize.define('user', {
-//         username: DataTypes.STRING,
-//         passwordhash: DataTypes.STRING
-//     });
-// };
